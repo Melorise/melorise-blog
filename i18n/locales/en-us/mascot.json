@@ -1,0 +1,70 @@
+{
+    "index": {
+        "titleMain": "Community Mascot",
+        "titleStickerPack": "Sticker Pack",
+        "titleCharacterSheet": "An-an & Tong-tong Concept Art",
+        "titleBackStory": "An-an's Story",
+        "titleFumo": "Fumo Concept Art",
+        "titleFigura": "Minecraft Avatar Model (Figura)",
+        "textWeChatStickerPackQrCode": "Scan the QR code to get the WeChat sticker pack",
+        "textCharacterSheetLicense": "Our mascot An-an & Tong-tong's Concept Art has been designed by Tyson Tan, license under CC BY-SA 4.0 International. Tyson provides mascot design for free and open source software projects, free of charge, under free licenses. If you are interested, please contact:",
+        "textFumoLicense": "社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata 受用户委托设计，使用 CC BY-SA 4.0 International 许可证进行授权。",
+        "textFumoReference": "Club “番茄炒蛋” provides paid optional commercial Anime character Fumo-style design services. If you are interested, please check here.",
+        "textFumoContact": "（常用联系方式）、",
+        "textFiguraText1": "{'The Minecraft avatar model of the community mascot An-an, was designed by community friend @AnMuXi(@安慕希) for the'}",
+        "textFiguraText2": "mod. This avatar model is licensed under the CC BY-SA 4.0 International.",
+        "textFiguraText3": "咨询",
+        "textMascotTagline": [
+            "龙虾龙虾龙虾！”",
+            "An-an was a rabbit, but one morning after waking up, she found herself transformed into a human with rabbit ears and tail…",
+            "... for anything else, she seems unable to recall."
+        ],
+        "textMascotBasicInfoList": {
+            "li": [
+                "Birthday: December 1st",
+                "Age: ???",
+                "Hair Color: Black",
+                "Iris Color: Black",
+                "Most Favorite Color: Red, Yellow, Blue, White, Black",
+                "Most Favorite Food: Saltfish Clay Pot Rice, Jelly, Ice Cream…",
+                "Pets: Tong-tong, Lobster"
+            ]
+        },
+        "textMascotCharacteristics": [
+            "An-an is introverted personality, but among her friends she reveals a completely different side: warm-hearted, patient, and a master meme creator."
+        ],
+        "textMascotCharacteristicsList1": {
+            "li": [
+                "An-an was very headstrong as a child. Several years ago, she caused quite a stir in the Linux Enthusiasts Community, which she deeply regrets. Since then, she has decided to dedicate herself to studying open-source related skills, but still retains some of her own stubbornness.",
+                "Despite having very limited social interactions for several years, An-an has made many friends in the community.",
+                "She dislikes interfering in others' choices and often tells her friends, \"Whatever suits you best is the best\"."
+            ]
+        },
+        "textMascotCharacteristicsList2": {
+            "li": [
+                "She believes the community is all about sharing fun and skills, and she continues to strive to make Linux more practical.",
+                "Rather than keeping a diary, An-an prefers to organize her memories by collecting memes from the community.",
+                "An-an is a workaholic who insists on listening to music while working. She approaches tasks with intense focus, sets extremely high standards for herself, but never dismisses others' contributions."
+            ]
+        },
+        "textMascotLanguageSkils": [
+            "She is proficient in multiple languages and passionate about localization and typography."
+        ],
+        "textMascotLanguageSkilsList1": {
+            "li": [
+                "An-an enjoys collecting aesthetically pleasing typefaces and firmly believes that elegant text deserves to be elevated by carefully chosen typography.",
+                "She is also meticulous about linguistic nuances and holds exacting standards for translations in terms of fidelity, fluency, and elegance."
+            ]
+        },
+        "textMascotRetroComputingHobby": [
+            "Her hobby is tinkering with various vintage computers."
+        ],
+        "textMascotRetroComputingHobbyList1": {
+            "li": [
+                "An-an's cabinet is packed with various vintage computers and quirky gadgets, each bearing a series of absurd names she's bestowed upon them.",
+                "With over ten devices constantly running at home, the indoor temperature inevitably runs significantly higher than the outdoor temperature.",
+                "An-an has a pet server named \"Lobster\"."
+            ]
+        }
+    }
+}
