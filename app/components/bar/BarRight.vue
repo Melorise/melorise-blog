@@ -1,32 +1,22 @@
 <script setup>
-const { t, tm } = useI18n();
-const linkValue = tm('allUniversalLink');
-
-const localLink = linkValue.local;
 const distroList = [
   {
-    img: '/distros/aosc-os.svg',
-    links: [useHIndex(localLink.download, 0), localLink.aoscRelnote],
-    description: t('BarRight.aoscOsTagline'),
-    title: t('BarRight.aoscOsTitle')
+    img: 'https://gitee.com/Bumoony.png',
+    links: [],
+    description: 'KafuuNagi',
+    title: '月兔回旋于梦中'
   },
-  {
-    img: '/distros/afterglow.svg',
-    links: [useHIndex(localLink.download, 1), localLink.afterglowRelnote],
-    description: t('BarRight.afterglowTagLine'),
-    title: t('BarRight.afterglowTitle')
-  }
 ];
 
 const commonLinkList = [
-  useTIndex(useHIndex(localLink.contact, 0), 3),
-  useTIndex(localLink.paste, 1),
-  useTIndex(linkValue.aoscPackagesSite),
-  useTIndex(localLink.events, 1),
-  useTIndex(localLink.internship, 1),
-  linkValue.reportSecurityIssuse,
-  linkValue.howToMirror,
-  useTIndex(localLink.crowdsourcing, 1)
+  {
+    "title": ["邮箱: 0d00@0721.hk"],
+    "url": "mailto:0d00@0721.hk"
+  },
+  {
+    "title": ["Github: KafuuNagi"],
+    "url": "https://github.com/KafuuNagi"
+  },
 ];
 </script>
 
@@ -34,12 +24,12 @@ const commonLinkList = [
   <div class="flex w-[37.5%] flex-col">
     <AppLink to="/aosc-os/right-for-me">
       <img
-        src="/jumbotron/minor1.svg"
+        src="/articles.png"
         class="imgScale1 w-full cursor-pointer" />
     </AppLink>
     <AppLink to="https://bbs.aosc.io/">
       <img
-        src="/jumbotron/minor2.svg"
+        src="/friends.png"
         class="imgScale1 w-full cursor-pointer" />
     </AppLink>
     <div class="flex grow flex-col">
@@ -52,8 +42,8 @@ const commonLinkList = [
           v-for="(item, index) in distroList"
           :key="`BarRight-1-div-${index}`"
           class="flex items-center pb-[15px]">
-          <div class="mr-[20px] ml-[0.5em] basis-[50px]">
-            <img :src="item.img" alt="" class="w-full" />
+          <div class="mr-[20px] ml-[0.5em] basis-[70px]">
+            <img id="img":src="item.img" alt="" class="w-full" />
           </div>
           <div class="flex-1 p-0">
             <div class="text-[14pt] font-semibold">
@@ -62,16 +52,16 @@ const commonLinkList = [
             <div class="text-[12pt]">
               {{ item.description }}
             </div>
-            <div class="text-[12pt]">
+            <!-- <div class="text-[12pt]">
               <link-standard
                 class="mr-[0.5rem] text-link"
                 :link="item.links[0]" />
               <link-standard :link="item.links[1]" />
-            </div>
+            </div> -->
           </div>
         </div>
       </article>
-      <CategorySecond :title="t('BarRight.quickLinks')" />
+      <CategorySecond title="联系我" />
       <div class="theme-border-secondary flex grow flex-col border-l">
         <link-standard
           v-for="(item, index) in commonLinkList"
@@ -88,5 +78,8 @@ const commonLinkList = [
 <style scoped>
 .imgScale1 {
   aspect-ratio: 96/55;
+}
+#img{
+  border-radius: 50%;
 }
 </style>

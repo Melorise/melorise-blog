@@ -20,13 +20,16 @@
     "better-sqlite3": "^12.4.1",
     "element-plus": "^2.11.5",
     "heti": "^0.9.6",
+    "highlight.js": "^11.11.1",
     "highlightjs": "^9.16.2",
     "mitt": "^3.0.1",
+    "monaco-editor": "^0.54.0",
     "nuxt": "^4.2.0",
     "nuxt-monaco-editor": "^1.4.0",
+    "pinia": "^3.0.4",
     "sass-embedded": "^1.93.2",
     "tm-themes": "^1.10.12",
-    "vue": "^3.5.22",
+    "vue": "^3.5.17",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {

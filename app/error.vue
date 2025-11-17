@@ -17,26 +17,19 @@ const errorData = computed(() =>
 <template>
   <NuxtLayout>
     <div class="flex-1">
-      <CategorySecond :title="$t('error.errorPage')" />
+      <CategorySecond title="错误页" />
       <div v-if="error?.statusCode === 404" class="heti">
-        <h1>{{ $t('error.cannotFindPage.title') }}</h1>
+        <h1>"找不到页面 (404)"</h1>
         <p v-if="error?.data">
-          {{
-            $t('error.cannotFindPage.content.text1', {
-              url: errorData.query.path
-            })
-          }}
+            "您想要访问的页面在站点上不存在。请检查您输入的网页地址 (URL) 是否正确。",
         </p>
         <p>
-          <span>{{ $t('error.cannotFindPage.content.text2') }}</span>
-          <LinkStandard
-            :link="useTIndex($tm('allUniversalLink.local.contact'), 4)" />
-          <span>{{ $t('allUniversalLink.periodPoint') }}</span>
+          <span>"如果该页面链接是其他网页中所引用的，请联系网站管理员。"</span>
         </p>
       </div>
       <div v-else class="heti">
         <h1>
-          {{ $t('error.unexpectedError', { statusCode: error?.statusCode }) }}
+          "发生了一个意外错误 ({{ error?.statusCode }})"
         </h1>
         <p>{{ error?.message ?? error?.statusMessage }}</p>
         <code>{{ error?.data }}</code>

@@ -6,22 +6,13 @@ export const BToMB = (byteSize, fixed = 3) => {
   return (byteSize / 1024 / 1024).toFixed(fixed);
 };
 
-export const copyToClipboard = (locale, text, name = '') => {
+export const copyToClipboard = (text, name = '') => {
   const lang = (() => {
-    switch (locale) {
-      case 'zh-cn':
-        return {
+    return {
           copy: '复制',
           success: '成功',
           failure: '失败'
         };
-      case 'en-us':
-        return {
-          copy: 'copy',
-          success: 'success',
-          failure: 'failure'
-        };
-    }
   })();
   navigator.clipboard
     .writeText(text)

@@ -14,8 +14,8 @@ const columnBorderlessList = [
   <div class="flex">
     <div class="w-[62.5%] bg-content-main-bg p-0">
       <!--主图（左一）-->
-      <app-link to="/download#aosc-os-download" class="flex w-full">
-        <img class="title-img-scale w-full" src="/jumbotron/main1.svg" />
+      <app-link to="/" class="flex w-full">
+        <img class="title-img-scale w-full" src="/ciallo.png" />
       </app-link>
       <!-- 最新文章 -->
       <div>
@@ -32,7 +32,7 @@ const columnBorderlessList = [
         </article>
       </div>
       <!-- 专栏 -->
-      <div id="topic">
+      <!-- <div id="topic">
         <CategorySecond :title="t('index.indexSpecialTitle')" />
         <article class="p-[1em] leading-6">
           <div
@@ -53,7 +53,7 @@ const columnBorderlessList = [
               url="/aosc-os/right-for-me" />
           </div>
         </article>
-      </div>
+      </div> -->
     </div>
     <BarRight />
   </div>

@@ -67,7 +67,6 @@ const returnHref = () => window.location.href;
               class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
               @click="
                 copyToClipboard(
-                  locale,
                   returnHref(),
                   t('paste.detail.pasteShareLink')
                 )

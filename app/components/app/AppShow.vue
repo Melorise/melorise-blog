@@ -1,5 +1,4 @@
 <script setup>
-const { locale } = useI18n();
 defineProps({
   title: {
     type: [Object],
@@ -13,10 +12,7 @@ defineProps({
     v-for="(item, index) in title.texts"
     :key="`${title.texts[0]}-${index}`">
     <span v-if="title.book.includes(index)">
-      <span v-if="locale === 'zh-cn'">《{{ item }}》</span>
-      <span v-else-if="locale === 'en-us'">
-        <i>{{ item }}</i>
-      </span>
+      <span>《{{ item }}》</span>
     </span>
     <span v-else>{{ item }}</span>
   </span>

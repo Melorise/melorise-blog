@@ -1,6 +1,5 @@
 <script setup>
 const route = useRoute();
-const { t } = useI18n();
 
 const title = computed(() => {
   switch (route.params.category) {

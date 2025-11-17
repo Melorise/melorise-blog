@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640.22 442.22">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 48px;
+      }
+
+      .cls-2 {
+        font-family: SourceCodePro-Medium, 'Source Code Pro';
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        font-family: NotoSansSC-Light, 'Noto Sans SC';
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+
+      .cls-4 {
+        fill: #faf7f1;
+      }
+
+      .cls-5 {
+        font-family: 'HarmonyOS_Sans_SC_Light', 'HarmonyOS Sans SC';
+      }
+
+      .cls-6 {
+        letter-spacing: -.5em;
+      }
+
+      .cls-7 {
+        font-family: NotoSansSC-Bold, 'Noto Sans SC';
+        font-size: 60px;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="_背景" data-name="背景">
+    <g>
+      <rect class="cls-4" x=".5" y=".5" width="639" height="439"/>
+      <path d="M639,1V439H1V1H639m1-1H0V440H640V0h0Z"/>
+    </g>
+  </g>
+  <g id="_图层_1" data-name="图层 1">
+    <text class="cls-1" transform="translate(29.12 128.03) scale(1.04 1)"><tspan class="cls-2" x="0" y="0">Ciallo</tspan><tspan class="cls-3" x="172.8" y="0">～</tspan><tspan class="cls-2" x="0" y="57.6">(</tspan><tspan class="cls-5" x="28.8" y="57.6">∠・</tspan><tspan class="cls-2" x="124.8" y="57.6">ω&lt; )</tspan><tspan class="cls-5" x="240" y="57.6">⌒☆</tspan></text>
+    <text class="cls-7" transform="translate(32.39 307.44)"><tspan x="0" y="0">欢迎访问</tspan><tspan class="cls-6" x="240" y="0">！</tspan></text>
+  </g>
+  <g id="_图层_3" data-name="图层 3">
+    <image width="512" height="512" transform="translate(371 173) scale(.53)" xlink:href="C:\Users\Tippy\Downloads\12ce54153b5e770b98b0646b33448cdc295072747_raw.png"/>
+  </g>
+</svg>

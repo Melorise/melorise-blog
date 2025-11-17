@@ -1,9 +1,7 @@
 export default () => {
-  const { t } = useI18n();
-
   useHead({
-    title: t('seo.heading.siteTitle'),
-    titleTemplate: (title) => `${title} | ${t('seo.site.siteName')}`,
+    title: '月兔子的兔子窝',
+    titleTemplate: (title) => `${title} | 月兔子的兔子窝`,
     link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }],
     script: [
       {
@@ -19,8 +17,8 @@ export default () => {
   });
 
   useSeoMeta({
-    description: t('seo.seo.siteDescription'),
-    ogImage: '/aosc.svg',
-    ogSiteName: t('seo.site.siteName')
+    description: '月兔子的个人博客',
+    ogImage: 'https://gitee.com/bumoony.png',
+    ogSiteName: '月兔子的兔子窝'
   });
 };

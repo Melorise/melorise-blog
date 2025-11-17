@@ -18,7 +18,7 @@ const isExternalLink = computed(() => {
   <a v-if="isExternalLink" :href="to" target="_blank" :class="props.class">
     <slot />
   </a>
-  <NuxtLinkLocale v-else v-bind="props">
+  <NuxtLink v-else v-bind="props">
     <slot />
-  </NuxtLinkLocale>
+  </NuxtLink>
 </template>
