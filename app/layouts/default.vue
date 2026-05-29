@@ -17,6 +17,8 @@ onBeforeUnmount(() => observer?.disconnect());
   <div>
     <div
       class="mb-[2.5rem] flex min-h-[calc(100vh-2.5rem)] min-w-[960px] flex-col">
+    <!-- <div
+      class="flex mb-[2.5rem] min-w-[960px] flex-col"> -->
       <BarHeader />
       <div class="content-container myShadow mx-auto flex flex-grow">
         <div
@@ -30,6 +32,8 @@ onBeforeUnmount(() => observer?.disconnect());
         </div>
       </div>
     </div>
+    <!-- <BarFooter class="fixed bottom-0 h-[2rem] min-w-[960px]" /> -->
+    <!-- <BarFooter class="h-[2rem] content-container mx-auto" /> -->
     <BarFooter class="fixed bottom-0 h-[2rem] min-w-[960px]" />
   </div>
 </template>

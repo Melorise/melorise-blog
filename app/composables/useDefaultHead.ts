@@ -2,7 +2,7 @@ export default () => {
   useHead({
     title: '月兔子的兔子窝',
     titleTemplate: (title) => `${title} | 月兔子的兔子窝`,
-    link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }],
+    link: [{ rel: 'icon', type: 'image/svg+xml', href: 'https://gitee.com/Bumoony.png' }],
     script: [
       {
         // This script will execute before the browser renders the <body>,

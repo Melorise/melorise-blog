@@ -1,5 +1,5 @@
 <script setup>
-const distroList = [
+const infoList = [
   {
     img: 'https://gitee.com/Bumoony.png',
     links: [],
@@ -22,12 +22,12 @@ const commonLinkList = [
 
 <template>
   <div class="flex w-[37.5%] flex-col">
-    <AppLink to="/aosc-os/right-for-me">
+    <AppLink to="/article">
       <img
         src="/articles.png"
         class="imgScale1 w-full cursor-pointer" />
     </AppLink>
-    <AppLink to="https://bbs.aosc.io/">
+    <AppLink to="/friend">
       <img
         src="/friends.png"
         class="imgScale1 w-full cursor-pointer" />
@@ -39,7 +39,7 @@ const commonLinkList = [
       <article
         class="theme-border-secondary border-l pt-[1em] pb-[0.5em] pl-[1em]">
         <div
-          v-for="(item, index) in distroList"
+          v-for="(item, index) in infoList"
           :key="`BarRight-1-div-${index}`"
           class="flex items-center pb-[15px]">
           <div class="mr-[20px] ml-[0.5em] basis-[70px]">

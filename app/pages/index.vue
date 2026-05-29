@@ -1,13 +1,5 @@
 <script setup>
-const { t, tm } = useI18n();
-useHead({ title: "月兔子的兔子窝" });
-
-const columnBorderlessList = [
-  '/icons/key-enter.min.svg',
-  '/icons/document-properties.min.svg',
-  '/icons/tools-wizard.min.svg',
-  '/icons/love.min.svg'
-];
+useHead({ title: "主页" });
 </script>
 
 <template>
@@ -27,33 +19,10 @@ const columnBorderlessList = [
             :filters="[{ key: 'home', value: 1 }]" />
           <div
             class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
-            <link-standard-jump :title="'查看更多>>>'" url="/news" />
+            <link-standard-jump :title="'查看更多>>>'" url="/article" />
           </div>
         </article>
       </div>
-      <!-- 专栏 -->
-      <!-- <div id="topic">
-        <CategorySecond :title="t('index.indexSpecialTitle')" />
-        <article class="p-[1em] leading-6">
-          <div
-            v-for="(item, index) in tm('index.specialColumns')"
-            :key="item.title"
-            class="flex items-center pb-[15px]">
-            <div class="mr-[20px] ml-[0.5em] basis-[50px]">
-              <img :src="columnBorderlessList[index]" />
-            </div>
-            <div class="flex-1 p-0">
-              <div class="text-[14pt] font-semibold">{{ item.title }}</div>
-              <div class="text-[12pt]">{{ item.description }}</div>
-            </div>
-          </div>
-          <div class="px-[15px] text-right text-[12pt] leading-6">
-            <link-standard-jump
-              :title="t('index.aoscRightForMe')"
-              url="/aosc-os/right-for-me" />
-          </div>
-        </article>
-      </div> -->
     </div>
     <BarRight />
   </div>

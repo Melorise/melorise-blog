@@ -1,13 +1,9 @@
 <script setup lang="ts">
 const navigationList = [
   ...Object.values({
-    // websiteSourceCode: {
-    //   title: '网页源代码',
-    //   url: 'https://github.com/AOSC-Dev/website-2023',
-    // },
     websiteIssuse: {
       title: '报告内容问题',
-      url: 'https://github.com/AOSC-Dev/website-2023/issues',
+      url: 'https://github.com/KafuuNagi',
     },
     backToHome:{
       title: '返回首页',

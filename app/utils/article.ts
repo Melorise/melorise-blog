@@ -1,6 +1,4 @@
-/**
- * Query the article collection directly
- */
+
 export const queryArticleCollection = () => queryCollection('article');
 
 export const queryArticlesByCategory = (
@@ -29,12 +27,6 @@ export const queryArticlesByCategory = (
     return () => q.all();
 };
 
-/**
- * Query all articles from the article collection
- * @param limit - Optional limit for number of results
- * @param filters - Optional additional filters
- * @returns Function that returns all articles matching the criteria
- */
 export const queryAllArticles = (
     limit: number = 0,
     filters?: Array<{ key: string; value: string }>

@@ -37,15 +37,15 @@ const getComp = computed(() => {
           },
           {
             "title": ["代码仓库"],
-            "url": "/about"
+            "url": "https://github.com/KafuuNagi"
           },
-          {
-            "title": ["关于主题"],
-            "url": "/aosc-os"
-          },
+          // {
+          //   "title": ["关于主题"],
+          //   "url": "/about-theme"
+          // },
           {
             "title": ["友情链接"],
-            "url": "/aosc-os"
+            "url": "/friend"
           },
         ],
         show: true

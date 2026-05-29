@@ -20,7 +20,6 @@ const { data: page, error } = await useAsyncData(
           .where('path', 'LIKE', `%${articlePath}%`)
           .first();
     } else {
-        // 查询不依赖i18n的公共页面集合
         content = await queryCollection('commonPage')
           .path(route.path)
           .first();

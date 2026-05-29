@@ -2,7 +2,7 @@
   <div class="bg-cover">
     <div class="flex">
       <div class="grow" />
-      <div class="opacity-0 content-container py-[8px] justify-end">
+      <div class="opacity-0 content-container py-[6px] justify-end">
         <div
           class="opacity-0 flex justify-end py-[5px] pr-[0.5rem] pl-[50px] text-clip whitespace-nowrap text-white *:no-underline">
         </div>
@@ -13,7 +13,7 @@
       <div class="content-container h-[69.2px] pb-[25px] pl-[0.5rem]">
         <NuxtLink to="/">
           <img id="logo"
-            src="https://gitee.com/bumoony.png"
+            src="https://gitee.com/Bumoony.png"
             class="w-[4rem] mr-[0.5rem] inline-block align-middle hover:shadow-md"
             alt="logo" />
             <h1 class="text-xl font-bold selection:no-underline inline-block align-middle">月兔子的兔子窝</h1>
