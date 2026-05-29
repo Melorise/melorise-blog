@@ -5,7 +5,7 @@ useHead({ title: "全部文章" });
 </script>
 
 <template>
-  <div class="flex flex-wrap *:w-1/2">
+  <div class="flex flex-wrap *:w-full min-[960px]:*:w-1/2">
     <div>
       <category-second
         title="技术博文"
@@ -22,12 +22,12 @@ useHead({ title: "全部文章" });
         title="个人创作"
         right-text="查看全部"
         right-url="/article/works"
-        class="border-l border-l-white"
+        class="min-[960px]:border-l min-[960px]:border-l-white"
         :show-right-chevron="true" />
       <article-list
         category="works"
         :limit="articleLimit"
-        class="theme-border-secondary overflow-y-auto border-l-[1px]" />
+        class="theme-border-secondary overflow-y-auto min-[960px]:border-l-[1px]" />
     </div>
     <div>
       <category-second
@@ -47,11 +47,11 @@ useHead({ title: "全部文章" });
         right-text="查看全部"
         right-url="/article/other"
         :show-right-chevron="true"
-        class="border-l border-l-white" />
+        class="min-[960px]:border-l min-[960px]:border-l-white" />
       <article-list
         category="other"
         :limit="articleLimit"
-        class="theme-border-secondary overflow-y-auto border-l-[1px]" />
+        class="theme-border-secondary overflow-y-auto min-[960px]:border-l-[1px]" />
     </div>
   </div>
 </template>

@@ -1,4 +1,6 @@
 <script setup>
+const emit = defineEmits(['navigate']);
+
 const getComp = computed(() => {
   return [
     [
@@ -37,7 +39,7 @@ const getComp = computed(() => {
           },
           {
             "title": ["代码仓库"],
-            "url": "https://github.com/KafuuNagi"
+            "url": "https://github.com/Melorise"
           },
           // {
           //   "title": ["关于主题"],
@@ -78,7 +80,7 @@ onBeforeUnmount(() => {
           <CategorySecond :title="item.title" bgVariant="primary" />
           <div class="my-item-ul">
             <AppLink v-for="(item2, index2) in item.children" :key="`barleft-2-link-${index2}`" :to="item2.url"
-              class="hover:no-underline">
+              class="hover:no-underline" @click="emit('navigate')">
               <el-menu-item :index="`${index}-${index2}`" class="my-el-menu-item" :class="{
                 'my-el-menu-item-hover': route.path.replace(/\/+$/, '').trim() === item2.url.trim()
               }">

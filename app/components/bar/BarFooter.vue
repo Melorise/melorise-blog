@@ -3,7 +3,7 @@ const navigationList = [
   ...Object.values({
     websiteIssuse: {
       title: '报告内容问题',
-      url: 'https://github.com/KafuuNagi',
+      url: 'https://github.com/Melorise',
     },
     backToHome:{
       title: '返回首页',
@@ -13,13 +13,15 @@ const navigationList = [
   )
 ];
 
+const mobileNavigationList = navigationList.filter(item => item.title !== '报告内容问题');
+
 function getCopyRightText(baseYear: number = 2025): string {
   const nowYear = new Date().getFullYear();
   if (nowYear === baseYear) {
-    return `© ${baseYear} 月兔回旋于梦中`
+    return `© ${baseYear} Melorise`
   }
   else {
-    return `© ${baseYear}-${nowYear} 月兔回旋于梦中`
+    return `© ${baseYear}-${nowYear} Melorise`
   }
 }
 </script>
@@ -31,7 +33,18 @@ function getCopyRightText(baseYear: number = 2025): string {
         {{ getCopyRightText() }}
       </span>
       <span class="mx-[20px]">|</span>
-      <AccordionNavigation :navigation-list="navigationList" span-class="mx-[20px]" link-class="cursor-pointer" />
+      <span class="hidden min-[960px]:inline">
+        <AccordionNavigation
+          :navigation-list="navigationList"
+          span-class="mx-[20px]"
+          link-class="cursor-pointer" />
+      </span>
+      <span class="min-[960px]:hidden">
+        <AccordionNavigation
+          :navigation-list="mobileNavigationList"
+          span-class="mx-[12px]"
+          link-class="cursor-pointer" />
+      </span>
     </div>
   </div>
 </template>

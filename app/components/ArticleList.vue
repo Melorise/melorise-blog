@@ -20,11 +20,11 @@ const { data, error, status } = await useAsyncData(
       <div v-for="item in data" :key="item.path" class="articlelist-item">
         <NuxtLink
           :to="item.path"
-          class="flex h-[2rem] cursor-pointer pl-6 leading-8 hover:bg-leftbar-bg">
-          <span class="flex-1 truncate">
+          class="flex min-h-[2rem] cursor-pointer items-center gap-2 py-1 pr-3 pl-4 leading-6 hover:bg-leftbar-bg sm:h-[2rem] sm:py-0 sm:pr-6 sm:pl-6 sm:leading-8">
+          <span class="min-w-0 flex-1 truncate">
             {{ item.title }}
           </span>
-          <span v-if="item.date" class="pr-6">
+          <span v-if="item.date" class="shrink-0 text-[0.9em] sm:text-[1em]">
             [{{ item.date.split('T')[0] }}]
           </span>
         </NuxtLink>

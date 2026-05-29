@@ -47,7 +47,8 @@ body {
   font-size: 12pt;
   font-family: 'Noto Sans CJK SC', sans-serif;
   font-size: 12pt;
-  min-width: 800px;
+  min-width: 0;
+  overflow-x: hidden;
 
   /* Global style for Element Plus created components (located outside #app) */
   --el-color-primary: var(--primary);
@@ -58,12 +59,13 @@ body {
 @media (min-width: 960px) {
   .content-container {
     width: 90vw !important;
+    min-width: 960px;
   }
 }
 
 .content-container {
-  width: 70vw;
-  min-width: 960px;
+  width: calc(100vw - 32px);
+  min-width: 0;
   max-width: 1280px;
   /* flex: 0 0 100%; */
 }

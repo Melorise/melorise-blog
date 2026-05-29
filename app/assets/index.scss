@@ -17,8 +17,12 @@ $common-margin: 24px;
   $line-height-size-h2: normal,
   $std-block-unit: 16px,
 
-  $_font-stack-sans: '',
-  $_font-stack-serif: ''
+  $font-family-hei: ("Heti Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  $font-family-song: ("Heti Song", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  $font-family-kai: ("Heti Kai", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  $font-family-hei-black: ("Heti Hei Black", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  $font-family-song-black: ("Heti Song Black", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  $font-family-kai-black: ("Heti Kai Black", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol")
 );
 
 .heti {
@@ -217,4 +221,31 @@ td {
 
 .language-menu {
   margin-top: -7px;
+}
+
+@media (max-width: 959px) {
+  .heti {
+    > :not(h2) {
+      margin-inline: 14px;
+    }
+
+    > :first-child:not(h2) {
+      margin-block-start: 14px !important;
+    }
+
+    h2 {
+      margin-block: 14px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    table {
+      display: block;
+      max-width: calc(100vw - 52px);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
 }

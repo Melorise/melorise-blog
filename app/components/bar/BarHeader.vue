@@ -1,3 +1,7 @@
+<script setup lang="ts">
+defineEmits(['open-mobile-menu']);
+</script>
+
 <template>
   <div class="bg-cover">
     <div class="flex">
@@ -10,14 +14,21 @@
       <div class="opacity-0 theme-bg-color-primary-static grow" />
     </div>
     <div class="flex justify-center">
-      <div class="content-container h-[69.2px] pb-[25px] pl-[0.5rem]">
+      <div class="content-container flex h-[69.2px] items-start justify-between pb-[25px]">
         <NuxtLink to="/">
           <img id="logo"
             src="https://gitee.com/Bumoony.png"
             class="w-[4rem] mr-[0.5rem] inline-block align-middle hover:shadow-md"
             alt="logo" />
-            <h1 class="text-xl font-bold selection:no-underline inline-block align-middle">月兔子的兔子窝</h1>
+            <h1 class="text-xl font-bold selection:no-underline inline-block align-middle">Melorise's Blog</h1>
         </NuxtLink>
+        <button
+          type="button"
+          class="theme-bg-color-primary-static mt-[0.8rem] hidden h-[2.4rem] w-[2.4rem] shrink-0 cursor-pointer items-center justify-center text-white max-[959px]:flex"
+          aria-label="打开导航菜单"
+          @click="$emit('open-mobile-menu')">
+          <Icon name="ic-baseline-menu" class="text-[1.45rem]" />
+        </button>
       </div>
     </div>
   </div>

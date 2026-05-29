@@ -2,7 +2,7 @@
 title: 关于我
 ---
 
-月兔回旋于梦中
+Melorise
 
 ### 邮箱
 
@@ -10,6 +10,6 @@ title: 关于我
 
 ### Github
 
-[KafuuNagi](https://github.com/KafuuNagi)
+[Melorise](https://github.com/Melorise)
 
 
