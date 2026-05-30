@@ -7,21 +7,29 @@ const route = useRoute();
 const scrollStore = useScrollStore();
 const contentRef = useTemplateRef('contentRef');
 
+const normalizeContentPath = (path: string) => {
+  const withoutIndex = path.replace(/\/index\.html$/, '');
+  const withoutTrailingSlash = withoutIndex.replace(/\/+$/, '');
+  return withoutTrailingSlash || '/';
+};
+
+const normalizedPath = computed(() => normalizeContentPath(route.path));
+
 const { data: page, error } = await useAsyncData(
-  `Content:${route.path}`,
+  `Content:${normalizedPath.value}`,
   async () => {
     let content;
     
     // 检查是否为文章路径
-    if (route.path.startsWith('/article/')) {
+    if (normalizedPath.value.startsWith('/article/')) {
       // 查询文章集合，移除 /article/ 前缀
-      const articlePath = route.path.replace('/article/', '') || '/';
+      const articlePath = normalizedPath.value.replace('/article/', '') || '/';
       content = await queryArticleCollection()
           .where('path', 'LIKE', `%${articlePath}%`)
           .first();
     } else {
         content = await queryCollection('commonPage')
-          .path(route.path)
+          .path(normalizedPath.value)
           .first();
       }
 
@@ -30,7 +38,7 @@ const { data: page, error } = await useAsyncData(
         statusCode: 404,
         statusMessage: 'Page not found',
         data: {
-          query: { path: route.path }
+          query: { path: route.path, normalizedPath: normalizedPath.value }
         }
       });
     }
@@ -60,7 +68,7 @@ watch(contentRef, () => {
       :id="page.title"
       :title="page.title"
       :right-text="page.date?.substring(0, 10)"
-      :title-url="`${route.path}#${page.title}`" />
+      :title-url="`${normalizedPath}#${page.title}`" />
     <ContentRenderer ref="contentRef" :value="page" class="heti" />
   </article>
 </template>
