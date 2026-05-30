@@ -1,6 +1,6 @@
 {
-  "name": "kafuunagi-site",
-  "version": "1.0",
+  "name": "melorise-blog",
+  "version": "1.1",
   "private": true,
   "type": "module",
   "scripts": {

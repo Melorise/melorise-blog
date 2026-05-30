@@ -37,14 +37,14 @@ const getComp = computed(() => {
             "title": ["关于我"],
             "url": "/about"
           },
-          {
-            "title": ["代码仓库"],
-            "url": "https://github.com/Melorise"
-          },
           // {
-          //   "title": ["关于主题"],
-          //   "url": "/about-theme"
+          //   "title": ["代码仓库"],
+          //   "url": "https://github.com/Melorise"
           // },
+          {
+            "title": ["关于主题"],
+            "url": "/about-theme"
+          },
           {
             "title": ["友情链接"],
             "url": "/friend"

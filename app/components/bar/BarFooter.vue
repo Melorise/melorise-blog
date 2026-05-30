@@ -3,11 +3,11 @@ const navigationList = [
   ...Object.values({
     websiteIssuse: {
       title: '报告内容问题',
-      url: 'https://github.com/Melorise',
+      url: 'https://github.com/Melorise/melorise-blog',
     },
-    backToHome:{
-      title: '返回首页',
-      url: '/',
+    aboutTheme:{
+      title: '关于主题',
+      url: '/about-theme',
     }
   }
   )
