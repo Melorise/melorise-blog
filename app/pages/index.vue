@@ -3,7 +3,7 @@ useHead({ title: "主页" });
 
 const infoList = [
   {
-    img: 'https://gitee.com/Bumoony.png',
+    img: 'https://gitee.com/melorise.png',
     links: [],
     description: 'Welcome come on!',
     title: 'Melorise'

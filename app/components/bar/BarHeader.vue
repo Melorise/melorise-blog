@@ -17,7 +17,7 @@ defineEmits(['open-mobile-menu']);
       <div class="content-container flex h-[69.2px] items-start justify-between pb-[25px]">
         <NuxtLink to="/">
           <img id="logo"
-            src="https://gitee.com/Bumoony.png"
+            src="https://gitee.com/Melorise.png"
             class="w-[4rem] mr-[0.5rem] inline-block align-middle hover:shadow-md"
             alt="logo" />
             <h1 class="text-xl font-bold selection:no-underline inline-block align-middle">Melorise's Blog</h1>

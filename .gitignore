@@ -8,6 +8,7 @@ dist
 docs
 # Node dependencies
 .pnpm-store
+pnpm-*
 node_modules
 
 # Logs
@@ -25,5 +26,6 @@ logs
 !.env.example
 
 pnpm-lock.yaml
+pnpm-workspace.yaml
 效果图
 --host

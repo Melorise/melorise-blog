@@ -18,7 +18,7 @@ export default () => {
 
   useSeoMeta({
     description: 'Melorise的个人博客',
-    ogImage: 'https://gitee.com/bumoony.png',
+    ogImage: 'https://gitee.com/melorise.png',
     ogSiteName: "Melorise's Blog"
   });
 };
