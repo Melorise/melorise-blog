@@ -24,7 +24,7 @@ defineEmits(['open-mobile-menu']);
         </NuxtLink>
         <button
           type="button"
-          class="theme-bg-color-primary-static mt-[0.8rem] hidden h-[2.4rem] w-[2.4rem] shrink-0 cursor-pointer items-center justify-center text-white max-[959px]:flex"
+          class="theme-bg-color-primary-static mt-[0.8rem] hidden h-[2.4rem] w-[2.4rem] shrink-0 cursor-pointer items-center justify-center text-white max-[767px]:flex"
           aria-label="打开导航菜单"
           @click="$emit('open-mobile-menu')">
           <Icon name="ic-baseline-menu" class="text-[1.45rem]" />

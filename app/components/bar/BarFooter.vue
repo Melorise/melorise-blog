@@ -33,13 +33,13 @@ function getCopyRightText(baseYear: number = 2025): string {
         {{ getCopyRightText() }}
       </span>
       <span class="mx-[20px]">|</span>
-      <span class="hidden min-[960px]:inline">
+      <span class="hidden min-[768px]:inline">
         <AccordionNavigation
           :navigation-list="navigationList"
           span-class="mx-[20px]"
           link-class="cursor-pointer" />
       </span>
-      <span class="min-[960px]:hidden">
+      <span class="min-[768px]:hidden">
         <AccordionNavigation
           :navigation-list="mobileNavigationList"
           span-class="mx-[12px]"

@@ -4,19 +4,21 @@ This document summarizes the responsive layout changes made for the Nuxt blog.
 
 ## Goal
 
-The project was originally desktop-oriented. The adaptation keeps the existing desktop visual style and component language, while making the same codebase usable on narrower screens.
+The project was originally desktop-oriented. The adaptation keeps the existing desktop visual style and component language, while making the same codebase usable on phones and tablets.
 
-The main breakpoint is `960px`:
+The current responsive model uses three ranges:
 
-- `>= 960px`: keep the original desktop layout.
-- `< 960px`: switch to a mobile/tablet layout.
+- `< 768px`: phone layout, with drawer navigation.
+- `768px - 959px`: tablet layout, keeping the left sidebar while simplifying the home page content.
+- `>= 960px`: desktop layout, keeping the original two-column home page.
 
 ## Global Layout
 
 Updated the global width rules so mobile screens are no longer forced into horizontal scrolling.
 
 - Removed mobile-blocking minimum widths from the root layout flow.
-- Kept the desktop `960px` baseline for large screens.
+- Kept a `768px` baseline for tablet screens where the left sidebar is still visible.
+- Kept the desktop `960px` baseline for the full desktop home layout.
 - Made `.content-container` shrink on small screens.
 - Slightly narrowed the effective mobile content width so content does not touch the viewport edges.
 
@@ -27,9 +29,9 @@ Relevant files:
 
 ## Navigation
 
-The desktop left sidebar remains unchanged for screens `>= 960px`.
+The left sidebar is shown from `768px` upward.
 
-For screens `< 960px`:
+For screens `< 768px`:
 
 - The left sidebar is hidden.
 - A menu icon button is shown in `BarHeader`.
@@ -37,6 +39,12 @@ For screens `< 960px`:
 - The drawer opens from the right side.
 - The drawer reuses the existing `BarLeft` navigation content.
 - Clicking a navigation link closes the drawer.
+
+For screens `768px - 959px`:
+
+- The left sidebar remains visible.
+- The drawer menu button is hidden.
+- The main content keeps the narrower tablet layout instead of switching to the full desktop home layout.
 
 Relevant files:
 
@@ -60,15 +68,17 @@ The original `BarRight` component was only used by the home page, so it was fold
 
 Desktop behavior:
 
-- Home page keeps the original `62.5% / 37.5%` split.
+- From `960px` upward, the home page keeps the original `62.5% / 37.5%` split.
 - Article/friend image panels remain visible.
 - About/contact blocks stay in the right column.
 
-Mobile behavior:
+Phone and tablet behavior below `960px`:
 
 - Home page becomes a single-column layout.
-- The article/friend image panels are hidden because the drawer already provides navigation to those sections.
+- The article/friend image panels are hidden because navigation is already available from the phone drawer or tablet left sidebar.
 - About/contact blocks remain visible below the latest articles.
+
+This means tablets keep the global left sidebar, but the home page right-side content follows the mobile-style simplified flow.
 
 Relevant files:
 
@@ -106,16 +116,26 @@ Relevant file:
 
 ## Footer
 
-The footer keeps the full desktop navigation on wide screens.
+The footer keeps the full navigation from `768px` upward.
 
-For screens `< 960px`:
+For screens `< 768px`:
 
 - The `报告内容问题` link is hidden to avoid overcrowding.
-- The footer keeps the copyright text and `返回首页`.
+- The footer keeps the copyright text and the remaining links.
+
+For screens `768px - 959px`, `报告内容问题` is shown again, matching the tablet layout request.
 
 Relevant file:
 
 - `app/components/bar/BarFooter.vue`
+
+## Static Content Route Fix
+
+Static article routes were normalized before content lookup so deployed URLs with or without trailing slashes, and URLs ending in `index.html`, resolve to the same content path.
+
+Relevant file:
+
+- `app/pages/[...slug].vue`
 
 ## Verification
 
