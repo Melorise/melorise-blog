@@ -8,18 +8,30 @@ const infoList = [
     description: 'Welcome come on!',
     title: 'Melorise'
   },
+  {
+    img: '/github.png',
+    links: [{ title: '查看个人主页', url: 'https://github.com/Melorise' }],
+    description: '@Melorise',
+    title: 'Github'
+  },
+  {
+    img: '/email.png',
+    links: [{ title: '发送邮件', url: 'mailto:0d00@0721.hk' }],
+    description: '0d00@0721.hk',
+    title: '邮箱'
+  },
 ];
 
-const commonLinkList = [
-  {
-    title: ['邮箱: 0d00@0721.hk'],
-    url: 'mailto:0d00@0721.hk'
-  },
-  {
-    title: ['Github: Melorise'],
-    url: 'https://github.com/Melorise'
-  },
-];
+// const commonLinkList = [
+//   {
+//     title: ['邮箱: 0d00@0721.hk'],
+//     url: 'mailto:0d00@0721.hk'
+//   },
+//   {
+//     title: ['Github: Melorise'],
+//     url: 'https://github.com/Melorise'
+//   },
+// ];
 </script>
 
 <template>
@@ -33,12 +45,8 @@ const commonLinkList = [
       <div>
         <CategorySecond :title="'最新文章'" />
         <article>
-          <ArticleList
-            category="all"
-            :limit="10"
-            :filters="[{ key: 'home', value: 1 }]" />
-          <div
-            class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
+          <ArticleList category="all" :limit="10" :filters="[{ key: 'home', value: 1 }]" />
+          <div class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
             <link-standard-jump :title="'查看更多>>>'" url="/article" />
           </div>
         </article>
@@ -46,48 +54,39 @@ const commonLinkList = [
     </div>
     <div class="flex w-full flex-col min-[960px]:w-[37.5%]">
       <AppLink to="/article" class="hidden min-[960px]:block">
-        <img
-          src="/articles.png"
-          class="home-side-img w-full cursor-pointer" />
+        <img src="/articles.png" class="home-side-img w-full cursor-pointer" />
       </AppLink>
       <AppLink to="/friend" class="hidden min-[960px]:block">
-        <img
-          src="/friends.png"
-          class="home-side-img w-full cursor-pointer" />
+        <img src="/friends.png" class="home-side-img w-full cursor-pointer" />
       </AppLink>
       <div class="flex grow flex-col">
-        <CategorySecond
-          :title="'关于我'"
-          class="border-solid border-content-main-bg min-[960px]:border-l" />
-        <article
-          class="theme-border-secondary pt-[1em] pb-[0.5em] pl-[1em] min-[960px]:border-l">
-          <div
-            v-for="(item, index) in infoList"
-            :key="`home-info-${index}`"
-            class="flex items-center pb-[15px]">
-            <div class="mr-[20px] ml-[0.5em] basis-[70px]">
+        <CategorySecond :title="'关于我'" class="border-solid border-content-main-bg min-[960px]:border-l" />
+        <article class="theme-border-secondary pt-[1em] pb-[0.5em] pl-[1em] max-[959px]:pt-[0.6em] max-[959px]:pl-[0.5em] min-[960px]:border-l">
+          <div v-for="(item, index) in infoList" :key="`home-info-${index}`" class="flex items-center pb-[15px] max-[959px]:pb-[10px]">
+            <div class="mr-[20px] ml-[0.5em] basis-[70px] max-[959px]:mr-[12px] max-[959px]:basis-[52px]">
               <img class="home-avatar w-full" :src="item.img" alt="" />
             </div>
             <div class="min-w-0 flex-1 p-0">
-              <div class="text-[14pt] font-semibold">
+              <div class="text-[14pt] font-semibold max-[959px]:text-[12pt]">
                 {{ item.title }}
               </div>
-              <div class="text-[12pt]">
+              <div class="text-[12pt] max-[959px]:text-[10.5pt]">
                 {{ item.description }}
+              </div>
+              <div class="text-[12pt] max-[959px]:text-[10.5pt]" v-if="item.links && item.links.length > 0">
+                <link-standard class="mr-[0.5rem] text-link" :link="item.links[0]" />
               </div>
             </div>
           </div>
         </article>
-        <CategorySecond title="联系我" />
+        <!-- <CategorySecond title="联系我" />
         <div class="theme-border-secondary flex grow flex-col min-[960px]:border-l">
-          <link-standard
-            v-for="(item, index) in commonLinkList"
-            :key="`home-link-${index}`"
+          <link-standard v-for="(item, index) in commonLinkList" :key="`home-link-${index}`"
             class="flex h-[2rem] cursor-pointer flex-row items-center justify-between bg-white px-[1rem] odd:bg-[#fefaf6] hover:bg-leftbar-bg"
             :link="item">
             <Icon name="ic-baseline-open-in-new" />
           </link-standard>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
