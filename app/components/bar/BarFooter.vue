@@ -10,13 +10,13 @@ const navigationList = [
       url: '/',
     },
     icpBeian: {
-      title: '皖ICP备2026XXXXXX号-1',
+      title: '皖ICP备2026033029号-1',
       url: 'https://beian.miit.gov.cn',
     },
-    gwaBeian: {
-      title: '皖公网安备XXXXXXXXXXXXXXX号',
-      url: 'https://beian.miit.gov.cn',
-    },
+    // gwaBeian: {
+    //   title: '皖公网安备XXXXXXXXXXXXXXX号',
+    //   url: 'https://beian.miit.gov.cn',
+    // },
   }
   )
 ];

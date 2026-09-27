@@ -9,7 +9,7 @@ $green: #a7ecad;
 $bg-secondary: #3f6075;
 $common-margin: 24px;
 
-@use 'heti' with (
+@use 'heti/lib/heti' with (
   $line-length: none,
   $darkmode: 'manual',
   $manualmode-dark-selector: 'body.dark &',
@@ -26,6 +26,9 @@ $common-margin: 24px;
 );
 
 .heti {
+  // 正文采用更舒展的行距；代码块仍保持紧凑，避免逐行代码过于松散。
+  line-height: 1.75;
+
   > :not(h2) {
     margin-inline: $common-margin;
   }
@@ -52,6 +55,15 @@ $common-margin: 24px;
 
   p {
     text-align: left;
+  }
+
+  // 仅正文直属段落缩进，避免引用、列表及组件内部文本也被额外缩进。
+  > p {
+    text-indent: 2em;
+  }
+
+  pre {
+    line-height: 1.5;
   }
 
   a {
@@ -90,12 +102,13 @@ $common-margin: 24px;
   font-weight: normal;
   background-color: var(--secondary);
   display: flex;
-  height: 2rem;
+  min-height: 2rem;
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px;
   color: white;
   user-select: none;
+  overflow-wrap: anywhere;
 
   > a:hover {
     border-block-end: inherit;
@@ -104,6 +117,12 @@ $common-margin: 24px;
     &::after {
       content: '¶';
     }
+  }
+
+  > a {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
   }
 }
 

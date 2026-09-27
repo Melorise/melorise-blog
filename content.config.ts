@@ -22,7 +22,7 @@ const articleCollection = defineCollection({
 const commonPageCollection = defineCollection({
   source: {
     include: '**/*.md',
-    exclude: ['**/_*']
+    exclude: ['article/**', '**/_*']
   },
   type: 'page',
   schema: pageSchama

@@ -9,13 +9,13 @@ const props = defineProps({
 
 const filingList = [
   {
-    title: '皖ICP备2026XXXXXX号-1',
+    title: '皖ICP备2026033029号-1',
     url: 'https://beian.miit.gov.cn'
   },
-  {
-    title: '皖公网安备XXXXXXXXXXXXXXX号',
-    url: 'https://beian.miit.gov.cn'
-  }
+  // {
+  //   title: '皖公网安备XXXXXXXXXXXXXXX号',
+  //   url: 'https://beian.miit.gov.cn'
+  // }
 ];
 
 const getComp = computed(() => {
@@ -27,6 +27,10 @@ const getComp = computed(() => {
           {
             "title": ["全部文章"],
             "url": "/article"
+          },
+          {
+            "title": ["搜索文章"],
+            "url": "/search"
           },
           {
             "title": ["技术博文"],

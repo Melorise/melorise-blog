@@ -102,10 +102,16 @@ useHead({ title: page.value?.title });
 
 if (error.value) throw error.value;
 
+// 普通 Markdown 页面（如“关于”）不展示文章目录。
+const isArticlePage = computed(() => normalizedPath.value.startsWith('/article/'));
+
 const tocLinks = computed(() => {
+  if (!isArticlePage.value) return [];
+
   return buildToc(String(page.value?.title || '文章'), page.value?.body?.value);
 });
 
+const hasArticleToc = computed(() => tocLinks.value.length > 0);
 const tocDrawerVisible = ref(false);
 
 watch(contentRef, () => {
@@ -115,7 +121,9 @@ watch(contentRef, () => {
 
 <template>
   <div v-if="page" class="flex flex-col min-[960px]:flex-row">
-    <article class="w-full min-[960px]:w-[62.5%]">
+    <article
+      class="w-full"
+      :class="hasArticleToc ? 'min-[960px]:w-[62.5%]' : ''">
       <category-second
         :id="page.title"
         :title="page.title"
@@ -124,13 +132,16 @@ watch(contentRef, () => {
       <ContentRenderer ref="contentRef" :value="page" class="heti" />
     </article>
 
-    <ArticleToc
-      v-if="tocLinks.length"
-      :links="tocLinks"
-      class="hidden min-[960px]:block min-[960px]:w-[37.5%] min-[960px]:border-l min-[960px]:border-l-white" />
+    <div
+      v-if="hasArticleToc"
+      class="hidden min-[960px]:block min-[960px]:w-[37.5%] min-[960px]:border-l min-[960px]:border-l-white">
+      <ArticleToc
+        :links="tocLinks"
+        class="sticky top-0 max-h-[calc(100vh-2.5rem)] overflow-y-auto overscroll-contain" />
+    </div>
 
     <button
-      v-if="tocLinks.length"
+      v-if="hasArticleToc"
       type="button"
       class="theme-bg-color-primary-static fixed right-[1rem] bottom-[3rem] z-30 flex h-[2.75rem] w-[2.75rem] items-center justify-center text-white shadow-md min-[960px]:hidden"
       aria-label="打开文章目录"
@@ -139,7 +150,7 @@ watch(contentRef, () => {
     </button>
 
     <el-drawer
-      v-if="tocLinks.length"
+      v-if="hasArticleToc"
       v-model="tocDrawerVisible"
       direction="rtl"
       size="min(82vw, 320px)"
