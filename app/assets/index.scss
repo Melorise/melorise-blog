@@ -70,9 +70,59 @@ $common-margin: 24px;
     color: var(--color-link);
   }
 
+  // Markdown 删除线作为“隐藏内容”显示：默认遮盖，鼠标悬停或触屏点击时揭示。
+  del {
+    padding-inline: 0.12em;
+    color: transparent;
+    background-color: #000;
+    text-decoration: none;
+    cursor: help;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transition: color 160ms ease;
+
+    > * {
+      color: transparent !important;
+      background-color: transparent !important;
+      text-decoration-color: transparent !important;
+      transition:
+        color 160ms ease,
+        text-decoration-color 160ms ease;
+    }
+
+    &:active,
+    &.is-spoiler-revealed {
+      color: #fff;
+
+      > * {
+        color: #fff !important;
+        text-decoration-color: currentColor !important;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #fff;
+
+        > * {
+          color: #fff !important;
+          text-decoration-color: currentColor !important;
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition-duration: 100ms;
+
+      > * {
+        transition-duration: 100ms;
+      }
+    }
+  }
+
   img {
     margin-inline: auto;
-    max-width: 70%;
+    max-width: 100%;
   }
 
   blockquote {

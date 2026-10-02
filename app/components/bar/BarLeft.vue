@@ -12,10 +12,10 @@ const filingList = [
     title: '皖ICP备2026033029号-1',
     url: 'https://beian.miit.gov.cn'
   },
-  // {
-  //   title: '皖公网安备XXXXXXXXXXXXXXX号',
-  //   url: 'https://beian.miit.gov.cn'
-  // }
+  {
+    title: '皖公网安备34030002001412号',
+    url: 'https://beian.mps.gov.cn/#/query/webSearch?code=34030002001412'
+  }
 ];
 
 const getComp = computed(() => {
