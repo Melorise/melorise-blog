@@ -16,16 +16,22 @@ const articleCollection = defineCollection({
     exclude: ['**/_*']
   },
   type: 'page',
-  schema: pageSchama
+  schema: pageSchama.extend({
+    comments: z.boolean().default(true),
+    commentId: z.string().max(512).optional()
+  })
 });
 
 const commonPageCollection = defineCollection({
   source: {
     include: '**/*.md',
-    exclude: ['**/_*']
+    exclude: ['article/**', '**/_*']
   },
   type: 'page',
-  schema: pageSchama
+  schema: pageSchama.extend({
+    comments: z.boolean().default(false),
+    commentId: z.string().max(512).optional()
+  })
 });
 
 export default defineContentConfig({
@@ -35,5 +41,3 @@ export default defineContentConfig({
     commonPage: commonPageCollection
   } as { [key in 'article' | 'commonPage']: DefinedCollection }
 });
-
-

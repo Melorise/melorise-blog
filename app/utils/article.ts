@@ -44,3 +44,10 @@ export const queryAllArticles = (
 
     return () => q.all();
 };
+
+export const queryArticleSearchSections = () =>
+    queryCollectionSearchSections('article', {
+        minHeading: 'h2',
+        maxHeading: 'h6',
+        extraFields: ['date']
+    });

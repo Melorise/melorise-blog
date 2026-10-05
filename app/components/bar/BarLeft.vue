@@ -1,5 +1,22 @@
 <script setup>
 const emit = defineEmits(['navigate']);
+const props = defineProps({
+  showFiling: {
+    type: Boolean,
+    default: false
+  }
+});
+
+const filingList = [
+  {
+    title: '皖ICP备2026033029号-1',
+    url: 'https://beian.miit.gov.cn'
+  },
+  {
+    title: '皖公网安备34030002001412号',
+    url: 'https://beian.mps.gov.cn/#/query/webSearch?code=34030002001412'
+  }
+];
 
 const getComp = computed(() => {
   return [
@@ -10,6 +27,10 @@ const getComp = computed(() => {
           {
             "title": ["全部文章"],
             "url": "/article"
+          },
+          {
+            "title": ["搜索文章"],
+            "url": "/search"
           },
           {
             "title": ["技术博文"],
@@ -37,6 +58,10 @@ const getComp = computed(() => {
             "title": ["关于我"],
             "url": "/about"
           },
+          {
+            "title": ["留言板"],
+            "url": "/guestbook"
+          },
           // {
           //   "title": ["代码仓库"],
           //   "url": "https://github.com/Melorise"
@@ -52,13 +77,21 @@ const getComp = computed(() => {
         ],
         show: true
       },
+      {
+        title: "备案信息",
+        children: filingList.map(item => ({
+          title: [item.title],
+          url: item.url
+        })),
+        show: props.showFiling
+      },
     ],
     ['0', '1']
   ];
 });//获取组件
 
 const navigationList = computed(() => {
-  return getComp.value[0];
+  return getComp.value[0].filter(item => item.show);
 });
 
 const rowHeight = 32;

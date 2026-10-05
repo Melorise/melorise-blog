@@ -1,19 +1,27 @@
 <script setup lang="ts">
 const navigationList = [
   ...Object.values({
-    websiteIssuse: {
-      title: '报告内容问题',
-      url: 'https://github.com/Melorise/melorise-blog',
-    },
-    aboutTheme:{
+    aboutTheme: {
       title: '关于主题',
       url: '/about-theme',
-    }
+    },
+    backToHome: {
+      title: '返回主页',
+      url: '/',
+    },
+    icpBeian: {
+      title: '皖ICP备2026033029号-1',
+      url: 'https://beian.miit.gov.cn',
+    },
+    gwaBeian: {
+      title: '皖公网安备34030002001412号',
+      url: 'https://beian.mps.gov.cn/#/query/webSearch?code=34030002001412',
+    },
   }
   )
 ];
 
-const mobileNavigationList = navigationList.filter(item => item.title !== '报告内容问题');
+const mobileNavigationList = navigationList.filter(item => item.title === '返回主页');
 
 function getCopyRightText(baseYear: number = 2025): string {
   const nowYear = new Date().getFullYear();
@@ -21,7 +29,7 @@ function getCopyRightText(baseYear: number = 2025): string {
     return `© ${baseYear} Melorise`
   }
   else {
-    return `© ${baseYear}-${nowYear} Melorise`
+    return `© ${baseYear} - ${nowYear} Melorise`
   }
 }
 </script>
@@ -29,20 +37,15 @@ function getCopyRightText(baseYear: number = 2025): string {
 <template>
   <div class="theme-bg-color-secondary-static footerbar flex w-full justify-center py-[2px] text-white">
     <div class="m-auto">
-      <span class="pl-[0.5rem]">
+      <span class="pl-[0.5rem] max-[767px]:pl-0">
         {{ getCopyRightText() }}
       </span>
       <span class="mx-[20px]">|</span>
       <span class="hidden min-[768px]:inline">
-        <AccordionNavigation
-          :navigation-list="navigationList"
-          span-class="mx-[20px]"
-          link-class="cursor-pointer" />
+        <AccordionNavigation :navigation-list="navigationList" span-class="mx-[20px]" link-class="cursor-pointer" />
       </span>
       <span class="min-[768px]:hidden">
-        <AccordionNavigation
-          :navigation-list="mobileNavigationList"
-          span-class="mx-[12px]"
+        <AccordionNavigation :navigation-list="mobileNavigationList" span-class="mx-[12px]"
           link-class="cursor-pointer" />
       </span>
     </div>

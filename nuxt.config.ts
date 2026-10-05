@@ -26,10 +26,25 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/seo',
     '@nuxt/content',
+    '0721c/nuxt',
     '@nuxt/eslint',
     'nuxt-monaco-editor',
     '@nuxt/icon'
   ],
+
+  runtimeConfig: {
+    public: {
+      comments0721c: {
+        enabled: true,
+        repository: 'Melorise/melorise-blog-comments',
+        locale: 'zh-CN',
+        messages: {
+          error: '评论加载失败，请确保当前网络环境能够连接 GitHub',
+          stale: '刷新失败，请确保当前网络环境能够连接 GitHub',
+        }
+      }
+    }
+  },
 
   icon: {
     mode: 'css',
@@ -100,7 +115,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       // https://github.com/nuxt/nuxt/issues/15462#issuecomment-2995718316
-      autoSubfolderIndex: true
+      autoSubfolderIndex: true,
+      routes: ['/search', '/guestbook']
     }
   },
 });

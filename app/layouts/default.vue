@@ -33,7 +33,7 @@ onBeforeUnmount(() => observer?.disconnect());
             size="min(82vw, 320px)"
             :with-header="false"
             custom-class="mobile-nav-drawer">
-            <BarLeft @navigate="mobileMenuVisible = false" />
+            <BarLeft show-filing @navigate="mobileMenuVisible = false" />
           </el-drawer>
           <div ref="dMainBody">
             <slot />
