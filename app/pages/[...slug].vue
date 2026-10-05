@@ -130,6 +130,12 @@ watch(contentRef, () => {
         :right-text="page.date?.substring(0, 10)"
         :title-url="`${normalizedPath}#${page.title}`" />
       <ContentRenderer ref="contentRef" :value="page" class="heti" />
+      <ClientOnly>
+        <ContentComments0721c
+          v-if="page.comments"
+          :document="page"
+          class="article-comments" />
+      </ClientOnly>
     </article>
 
     <div
@@ -162,6 +168,16 @@ watch(contentRef, () => {
 </template>
 
 <style scoped>
+.article-comments {
+  --0721c-accent: var(--primary);
+  --0721c-border: var(--secondary);
+  --0721c-text: currentColor;
+  --0721c-muted: color-mix(in srgb, currentColor 65%, transparent);
+  --0721c-surface: color-mix(in srgb, var(--secondary) 12%, transparent);
+  --0721c-radius: 0;
+  padding: 1rem;
+}
+
 :deep(.article-toc-drawer .el-drawer__body) {
   padding: 0;
 }

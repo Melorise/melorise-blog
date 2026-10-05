@@ -58,6 +58,10 @@ const getComp = computed(() => {
             "title": ["关于我"],
             "url": "/about"
           },
+          {
+            "title": ["留言板"],
+            "url": "/guestbook"
+          },
           // {
           //   "title": ["代码仓库"],
           //   "url": "https://github.com/Melorise"
@@ -154,5 +158,4 @@ onBeforeUnmount(() => {
   padding-bottom: 0px;
   background-color: #ececec;
 }
-
 </style>
